@@ -32,7 +32,7 @@ function uploadSingleFile(file) {
 
     xhr.send(formData);
 }
-
+//
 function uploadMultipleFiles(files) {
     var formData = new FormData();
     for(var index = 0; index < files.length; index++) {
