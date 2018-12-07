@@ -27,7 +27,7 @@ public class DBFileController {
     @Autowired
     private FileService fileService;
 
-    @PostMapping("/uploadfiledb")
+    @PostMapping("/uploadfile")
     public UploadFileResponse uploadFile(@RequestParam("file")MultipartFile file){
         DBFile dbFile = fileService.storeFile(file);
 
@@ -41,8 +41,8 @@ public class DBFileController {
                 file.getSize());
     }
 
-    @PostMapping("/uploadmultipledb")
-    public List<UploadFileResponse> uploadMultipleFiles (@RequestParam("file") MultipartFile[] files){
+    @PostMapping("/uploadmultiple")
+    public List<UploadFileResponse> uploadMultipleFiles (@RequestParam("files") MultipartFile[] files){
         return Arrays.asList(files)
                 .stream()
                 .map(file -> uploadFile(file))
