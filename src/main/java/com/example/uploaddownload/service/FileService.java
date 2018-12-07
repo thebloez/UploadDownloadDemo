@@ -34,7 +34,7 @@ public class FileService {
             e.printStackTrace();
         }
 
-        return dbFile;
+        return fileRepository.save(dbFile);
     }
 
     public DBFile getFile(String fileID){
